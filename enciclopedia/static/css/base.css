@@ -1,0 +1,16 @@
+:root{
+    --color-primary:#BA63FF;
+    --color-secondary:#5A1C8B;
+    --color-tertiary:#FF3FB2;
+    --color-fourth:#FFB84E;
+    --color-background: #FFFFFF;
+    --color-text: #666666;
+    --font-family: 'DM Sans', Monserrat;
+    --font-size-base: 16px;
+    --spacing-base: 1rem;
+}
+
+a {
+    color: var(--color-primary);
+    background-color: var(--color-fourth);
+}

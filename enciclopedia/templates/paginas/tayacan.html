@@ -1,48 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Enciclopedia</title>
+{% extends "base.html" %}  
 
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Categorías</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+{% block titulo %}Inicio - Tayacan{% endblock %}
 
-    <main>
-        <section class="hero">
-            <h1>Bienvenido a la Enciclopedia Tayacan</h1>
-            <p>Tu fuente confiable de información sobre el Tayacan y más.</p>
-        </section>
+{% block contenido %} 
 
-        <section class="content">
-            <h2>Explora nuestras categorías</h2>
-            <div class="categories">
-                <div class="category">
-                    <h3>Historia</h3>
-                    <p>Descubre la historia del Tayacan y su evolución a lo largo del tiempo.</p>
-                </div>
-                <div class="category">
-                    <h3>Tecnología</h3>
-                    <p>Conoce las innovaciones tecnológicas que hacen del Tayacan un vehículo único.</p>
-                </div>
-                <div class="category">
-                    <h3>Modelos</h3>
-                    <p>Explora los diferentes modelos del Tayacan y sus características distintivas.</p>
-                </div>
-                <div class="category">
-                    <h3>Galería</h3>
-                    <p>Admira imágenes impresionantes del Tayacan en acción.</p>
-                </div>
-            </div>
-        </section>          
-    </main>
-</html>
+<div class="box">
+    <div class="info">
+        <div class="foto-bg">
+          <img class="jos-torres" src="img/jos-torres-1.png" />
+          <div class="div"></div>
+        </div>
+        <p class="text-wrapper">La cultura más cerca de ti</p>
+        <p class="p">
+          Tayacán tiene como propósito recopilar toda nuestra historia, alrededores, sociedad y completa existencia
+          desde nuestra perspectiva. Nicaragua desde nuestro punto de vista.
+        </p>
+    </div>
+</div>
+<div class="box">
+      <div class="search">
+        <div class="rectangle"></div>
+        <p class="text-wrapper">¿Qué te interesa aprender hoy?</p>
+        <img class="img" src="img/search.png" />
+        <div class="component"><div class="div">Buscar</div></div>
+      </div>
+</div>
+<div class="box">
+      <div class="section">
+        <div class="rectangle"></div>
+        <img class="img" src="img/rectangle-16.png" />
+        <div class="text-wrapper">Destacado de la semana</div>
+        <div class="flexcontainer">
+          <p class="text"><span class="span">Batalla de</span></p>
+          <p class="text"><span class="span">San Jacinto</span></p>
+        </div>
+        <div class="component"><div class="div">Entrar</div></div>
+      </div>
+</div>
+<div class="box">
+      <div class="colecciones">
+        <div class="rectangle"></div>
+        <div class="text-wrapper">Colecciones</div>
+        <p class="div">Recopilaciones de entradas que te ayudarán con tus planes de estudio.</p>
+        <img class="img" src="img/rectangle-21.png" />
+        <img class="rectangle-2" src="img/rectangle-22.png" />
+        <div class="text-wrapper-2">“Todos San Jacinto”</div>
+        <p class="p">Todo acerca del mes patrio nicraguense</p>
+        <div class="text-wrapper-3">“Flora del Caribe”</div>
+        <p class="text-wrapper-4">Estudios botánicos de la Región Atlántica</p>
+        <img class="rectangle-3" src="img/rectangle-23.png" />
+        <div class="text-wrapper-5">“Héroes de la Revolución”</div>
+        <p class="text-wrapper-6">Recopilación de todos los héroes del ‘79</p>
+      </div>
+</div>
+{% endblock %}

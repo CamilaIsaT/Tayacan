@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{% block titulo %} {% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- CSS Estilos -->
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header>
+             <!-- place navbar here -->
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="nav navbar-nav">
+                    <a class="nav-item nav-link active" href="#" aria-current="page">Inicio</a>
+                    <a class="nav-item nav-link" href="">Colabora</a>
+                    <a class="nav-item nav-link" href="#">Nosotras</a>
+                    <a class="nav-item nav-link" href="#">Saberes</a>
+                    <a class="nav-item nav-link" href="#">Juegos</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {% block contenido %}
+            
+            {% endblock %}
+        </main>
+        <footer>
+            <!-- place footer here -->
+             <img class="rectangle" src="/static/imag/footer.jpg" alt="" role="presentation">
+            <div class="grupo">
+                <section class="info">
+                    <h2 class="text-wrapper"  aria-labelledby="contact-heading">Contactanos!</h2>
+                    <div class="correo">
+                        <img src="/static/imag/correo-electronico.png" alt="correo"><!--icono de correo-->
+                        <a href="enciclopediatayacan@gmail.com"
+                        target="_blank"
+                        class="text-wrapper">enciclopediatayacan@gmail.com</a>
+                    </div>
+                    <div class="telefono">
+                        <img class="phone" src="/static/imag/llamar.png" alt="telefono"><!--icono de telefono-->
+                        <span class="text-wrapper-2">+505 7701 9528</span>
+                    </div>
+                </section>
+                <section class="social-media" aria-labelledby="social-heading">
+                    <h3 class="text-wrapper-3">Tambien estamos presentes en Redes Sociales!</h3>
+                    <div class="social-item">
+                        <img class="facebook" src="/static/imag/facebook.png" alt="facebook"><!--icono de facebook-->
+                        <span class="text-wrapper-4">Enciclopedia Virtual Tayacan</span>
+                    </div>
+                    <div class="social-item">
+                        <img class="instagram" src="/static/imag/camara.png" alt="instagram"><!--icono de instagram-->
+                        <span class="tex"text-wrapper-5>@tayacan_enciclopedia</span>
+                    </div>
+                    <div class="social-item">
+                        <img class="tiktok" src="/static/imag/tik-tok.png" alt="tiktok"><!--icono de tiktok-->
+                        <span class="text-wrapper-6">@tayacan_enciclopedia</span>
+                    </div>
+                </section>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+        crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
