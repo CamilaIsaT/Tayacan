@@ -3,5 +3,38 @@
 {% block titulo %}Iniciar Sesion {% endblock %}
 
 {% block contenido %}
+<main>
+    <div class="img">
+        <div class="boton">
+            <button>
+                <i class="bi bi-arrow-left-circle-fill"></i>
+            </button>
+        </div>
+        <div class="foto">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="body">
+        <div class="texto">
+            <h2>Inicio de Sesion</h2>
+        <span>Bienvenido de nuevo</span>
+    </div>
+        <form action="" id="form-login" class="rol-form">
+            <div class="mb-3">
+                <!--Usuario-->
+                <label for="" class="form-label">Usuario</label>
+                <input type="email" class="form-control" id="" placeholder="Usuario">
+            </div>
+            <!--Constrasena-->
+            <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Password</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="contraseña">
+                <div id="passwordHelpBlock" class="form-text">
+                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y numeros, y no debe contener espacios, caracteres especiales o emoji.
+                </div>
+            </div>
+            <button type="button" class="btn">Iniciar Sesion</button>
+        </form>
+</main>
 
 {% endblock %}
