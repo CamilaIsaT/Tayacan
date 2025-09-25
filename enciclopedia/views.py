@@ -1,10 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
-def inicio(request):
-    return HttpResponse("<h1> Hola, mundo. Estás en la página de inicio de la enciclopedia.</h1>")
 
 def tayacan(request):
     return render(request, "paginas/tayacan.html")
+
+def sign_in(request):
+    return render(request, "inicio sesion/perfilnt.html")
+
+def registrarse(request):
+    return render(request, "inicio sesion/registrarse.html")
+
+def sesion(request):
+    return render(request, "inicio sesion/login.html")
+
+def nosotras(request):
+    return render(request, "paginas/nosotras.html")
+
+def saberes(request):
+    return render(request, "paginas/saberes.html")

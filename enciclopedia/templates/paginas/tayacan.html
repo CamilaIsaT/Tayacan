@@ -4,51 +4,33 @@
 
 {% block contenido %} 
 
-<div class="box">
-    <div class="info">
-        <div class="foto-bg">
-          <img class="jos-torres" src="img/jos-torres-1.png" />
-          <div class="div"></div>
-        </div>
-        <p class="text-wrapper">La cultura más cerca de ti</p>
-        <p class="p">
-          Tayacán tiene como propósito recopilar toda nuestra historia, alrededores, sociedad y completa existencia
-          desde nuestra perspectiva. Nicaragua desde nuestro punto de vista.
-        </p>
-    </div>
+<main>
+<div class="card text-bg-dark" style="opacity: 1;">
+  <img src="/static/imag/banner.jpg" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  </div>
 </div>
-<div class="search-box">
-     <form class="d-flex" role="search">
+<div class="card" style="background-image: url();"> <!--Agregar en la hoja de estilos el background, agregarlo aca directamente se confunde el vscode-->
+    <div class="textos">
+      <h1>La cultura más cerca de ti</h1>
+      <p>Tayacán tiene como propósito recopilar toda muestra historia, alrededores, sociedad y completa existencia desde nuestra perspectiva. Nicaragua desde nuestro punto de vista</p>
+    </div>
+  </div>
+  <div class="buscar">
+    <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-</div>
-<div class="box">
-      <div class="section">
-        <div class="rectangle"></div>
-        <img class="img" src="img/rectangle-16.png" />
-        <div class="text-wrapper">Destacado de la semana</div>
-        <div class="flexcontainer">
-          <p class="text"><span class="span">Batalla de</span></p>
-          <p class="text"><span class="span">San Jacinto</span></p>
-        </div>
-        <div class="component"><div class="div">Entrar</div></div>
-      </div>
-</div>
-<div class="box">
-      <div class="colecciones">
-        <div class="rectangle"></div>
-        <div class="text-wrapper">Colecciones</div>
-        <p class="div">Recopilaciones de entradas que te ayudarán con tus planes de estudio.</p>
-        <img class="img" src="img/rectangle-21.png" />
-        <img class="rectangle-2" src="img/rectangle-22.png" />
-        <div class="text-wrapper-2">“Todos San Jacinto”</div>
-        <p class="p">Todo acerca del mes patrio nicraguense</p>
-        <div class="text-wrapper-3">“Flora del Caribe”</div>
-        <p class="text-wrapper-4">Estudios botánicos de la Región Atlántica</p>
-        <img class="rectangle-3" src="img/rectangle-23.png" />
-        <div class="text-wrapper-5">“Héroes de la Revolución”</div>
-        <p class="text-wrapper-6">Recopilación de todos los héroes del ‘79</p>
-      </div>
-</div>
+  </div>
+  <div class="calendario">
+    <h2>Calendario Cultural</h2>
+    <!-- Calendario de Google -->
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FLondon&showPrint=0&showCalendars=0&showTitle=0&showNav=0&showTabs=0&src=ZXMtNDE5Lm5pI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+</main>
+
 {% endblock %}

@@ -11,7 +11,7 @@
                 <p>Inicia sesión para seguir aprendiendo</p>
             </div>
             <button class="component" type="button" aria-label="Iniciar Sesion">
-                <span class="text-wrapper">Iniciar sesion</Span>
+                <a href="{% url 'login' %}" style="text-decoration: none;">Iniciar Sesion</a>
             </button>
         </div>
         <div class="registro">
@@ -20,7 +20,8 @@
                 <p>Que esperas! Recuerda que puedes añadir obras accesibles para todos. Crea tu usuario aqui:</p>
             </div>
             <button class="component" type="button" aria-label="Registrarse">
-                <span class="text-wrapper">Registrarse</Span>
+              <a href="{% url 'registrarse' %}" style="text-decoration: none;">Registrarse</a>
+            </button>
         </div>
         <img class="ellipse" src="" alt="">
     </section>

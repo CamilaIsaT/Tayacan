@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registrar {% endblock %}
+
+{% block contenido %}
+<main>
+    <div class="img">
+        <div class="boton">
+            <a href="{% url 'colabora' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                </svg>
+            </a>
+        </div>
+        <div class="foto">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="body">
+        <div class="texto">
+            <h2>Registro</h2>
+            <span>Tu cultura mas cerca de ti</span>
+        </div>
+        <!-- Opciones de rol -->
+        <div class="opciones">
+            <button onclick="mostrarFormulario('form-educacion')">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Educación</h5>
+                </div>
+            </button>
+            <button onclick="mostrarFormulario('form-estudiante')">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Estudiante</h5>
+                </div>
+            </button>
+        </div>
+
+
+        <!-- Formulario de educación -->
+        <form action="" id="form-educacion" class="rol-form" method="post">
+            <h2>Educador</h2>
+            <div class="mb-3">
+                <!--Usuario-->
+                <label for="usuario-educacion" class="form-label">Nombre de usuario</label>
+                <input type="email" class="form-control" id="usuario-educacion" placeholder="Usuario">
+                <div id="passwordHelpBlock" class="form-text">
+                    Este es el nombre por el que te conoceran los demas </div>
+            </div>
+            <!--Constrasena-->
+            <div class="mb-3">
+                <label for="contra-educacion" class="form-label">Password</label>
+                <input type="password" id="contra-educacion" class="form-control" aria-describedby="passwordHelpBlock">
+                <div id="passwordHelpBlock" class="form-text">
+                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y numeros, y no debe contener
+                    espacios, caracteres especiales o emoji.
+                </div>
+            </div>
+            <!--Nivel de Educaciion-->
+            <div class="mb-3">
+                <label for="nivel-educacion" class="form-label">Nivel de educacion</label>
+                <select class="form-select" aria-label="Default select example" id="nivel-educacion">
+                    <option selected>Escoge una opcion</option>
+                    <option value="">...</option>
+                </select>
+            </div>
+            <button type="button" class="btn">Registrarse</button>
+
+
+        </form>
+
+        <!-- Formulario de estudiante -->
+        <form action="" id="form-estudiante" class="rol-form" method="post">
+            <h2>Estudiante</h2>
+            <div class="mb-3">
+                <!--Usuario-->
+                <label for="usuario-estudiante" class="form-label">Nombre de usuario</label>
+                <input type="email" class="form-control" id="usuario-estudiante" placeholder="Usuario">
+                <div class="form-text">
+                    Este es el nombre por el que te conoceran los demas </div>
+            </div>
+            <!--Constrasena-->
+            <div class="mb-3">
+                <label for="contra-estudiante" class="form-label">Contraseña</label>
+                <input type="password" id="contra-estudiante" class="form-control" aria-describedby="passwordHelpBlock"
+                    placeholder="contraseña">
+                <div id="passwordHelpBlock" class="form-text">
+                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y numeros, y no debe contener
+                    espacios, caracteres especiales o emoji.
+                </div>
+            </div>
+            <!--Fecha de nac-->
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fecha" name="fecha">
+            </div>
+            <!--Nivel de Educaciion-->
+            <div class="mb-3">
+                <label for="nivel-estudiante" class="form-label">Nivel de educacion</label>
+                <select class="form-select" id="nivel-estudiante" aria-label="Default select example">
+                    <option selected>Escoge una opcion</option>
+                    <option value="">...</option>
+                </select>
+            </div>
+            <button type="button" class="btn">Registrarse</button>
+        </form>
+    </div>
+    <script>
+        function mostrarFormulario(formId) {
+            // Ocultar todas las opciones de rol
+            const opciones = document.querySelector('.opciones');
+            if (opciones) {
+                opciones.style.display = 'none';
+            }
+
+            // Ocultar todos los formularios
+            const formularios = document.querySelectorAll('.rol-form');
+            formularios.forEach(form => {
+                form.style.display = 'none';
+            });
+
+            // Mostrar el formulario seleccionado
+            const formularioSeleccionado = document.getElementById(formId);
+            if (formularioSeleccionado) {
+                formularioSeleccionado.style.display = 'block';
+
+                // Desplazar la vista al formulario
+                formularioSeleccionado.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</main>
+
+{% endblock %}
