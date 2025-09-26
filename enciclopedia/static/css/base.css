@@ -10,7 +10,3 @@
     --spacing-base: 1rem;
 }
 
-a {
-    color: var(--color-primary);
-    background-color: var(--color-fourth);
-}
