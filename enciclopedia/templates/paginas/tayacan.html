@@ -1,38 +1,37 @@
-{% extends "base.html" %}  
+{% extends "base.html" %}
+{% load static %}
 
 {% block titulo %}Inicio - Tayacan{% endblock %}
 
-{% block css_extra %} 
-
+{% block css_extra %}
+<!-- CSS ESPECÍFICO solo para esta página -->
+<link rel="stylesheet" href="{% static 'css/tayacan.css' %}">
 {% endblock %}
 
-{% block contenido %} 
+{% block contenido %}
 
 <main>
-<div class="card text-bg-dark" style="opacity: 1;">
-  <img src="/static/imag/banner.jpg" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small>Last updated 3 mins ago</small></p>
-  </div>
-</div>
-<div class="card" style="background-image: url();"> <!--Agregar en la hoja de estilos el background, agregarlo aca directamente se confunde el vscode-->
-    <div class="textos">
-      <h1>La cultura más cerca de ti</h1>
-      <p>Tayacán tiene como propósito recopilar toda muestra historia, alrededores, sociedad y completa existencia desde nuestra perspectiva. Nicaragua desde nuestro punto de vista</p>
+  <div class="card text-bg-dark" style="opacity: 1;">
+    <img src="/static/imag/banner.jpg" class="card-img-2" alt="..." style="opacity: 0.5;">
+    <div class="card-img-overlay ">
+      <h5 class="card-title">La cultura más cerca de ti</h5>
+      <p class="card-text">Tayacán tiene como propósito recopilar toda nuestra historia, alrededores, sociedad y
+        completa existencia desde nuestra perspectiva. Nicaragua desde nuestro punto de vista. </p>
     </div>
   </div>
   <div class="buscar">
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <p class="text-s">¿Qué te interesa aprender hoy?</p>
   </div>
   <div class="calendario">
     <h2>Calendario Cultural</h2>
     <!-- Calendario de Google -->
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FLondon&showPrint=0&showCalendars=0&showTitle=0&showNav=0&showTabs=0&src=ZXMtNDE5Lm5pI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FLondon&showPrint=0&showCalendars=0&showTitle=0&showNav=0&showTabs=0&src=ZXMtNDE5Lm5pI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4"
+      style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
 
 </main>

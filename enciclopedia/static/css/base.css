@@ -1,12 +1,41 @@
-:root{
-    --color-primary:#BA63FF;
-    --color-secondary:#5A1C8B;
-    --color-tertiary:#FF3FB2;
-    --color-fourth:#FFB84E;
+:root {
+    --color-primary: #BA63FF;
+    --color-secondary: #5A1C8B;
+    --color-tertiary: #FF3FB2;
+    --color-fourth: #FFB84E;
     --color-background: #FFFFFF;
     --color-text: #666666;
-    --font-family: 'DM Sans', Monserrat;
+    --font-family: 'DM Sans', 'Monserrat';
     --font-size-base: 16px;
     --spacing-base: 1rem;
 }
 
+nav {
+    background-color: var(--color-secondary);
+}
+
+div.nav a {
+    background-color: #e0e1dd;
+    color: var(--color-secondary);
+    margin: 10px;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+div.nav a:hover {
+    background-color: var(--color-tertiary);
+    color: var(--color-background);
+    transition: 0.3s;
+}
+
+/* Estilos para el footer */
+.card-img{
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-img-overlay{
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding-top: 150px;
+}

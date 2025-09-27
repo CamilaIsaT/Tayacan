@@ -1,0 +1,57 @@
+.card-img-2 {
+    height: 400px;
+    flex-shrink: 0;
+    object-fit: cover;
+    background-image: linear-gradient(90deg, var(--color-secondary) 56.23%, var(--color-tertiary) 100%);
+}
+
+div .card-title {
+    color: #FFF;
+    width: 494px;
+    height: 163px;
+    flex-shrink: 0;
+    font-family: DM Sans;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    /* 93.75% */
+    letter-spacing: var(--Nmero, 0);
+}
+
+div .card-text {
+    width: 494px;
+    height: 163px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    /* 125% */
+    letter-spacing: var(--Nmero, 0);
+}
+
+.buscar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+padding: 30px;
+
+}
+
+.text-s {
+    width: 412px;
+    height: 50px;
+    flex-shrink: 0;
+    color: #5A1C8B;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    /* 250% */
+    letter-spacing: var(--Nmero, 0);
+}
