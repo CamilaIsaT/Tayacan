@@ -1,11 +1,17 @@
-{% extends "base.html" %}  
+{% extends "base.html" %}
+{% load static %}
 
 {% block titulo %}Iniciar Sesion {% endblock %}
 
+{% block css_extra %}
+<!-- CSS ESPECÍFICO solo para esta página -->
+<link rel="stylesheet" href="{% static 'css/iniciar.css' %}">
+{% endblock %}
+
 {% block contenido %}
 <main>
-    <div class="img">
-        <div class="boton">
+    <div class="contenedor">
+        <div class="header">
             <a href="{% url 'colabora' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
@@ -13,32 +19,36 @@
                         d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
                 </svg>
             </a>
+            <img class="ellipse" src="/static/imag/guardabarranco.jpg" alt="">
         </div>
-        <div class="foto">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div class="body">
-        <div class="texto">
-            <h2>Inicio de Sesion</h2>
-        <span>Bienvenido de nuevo</span>
-    </div>
-        <form action="" id="form-login" class="rol-form" method="post">
-            <div class="mb-3">
-                <!--Usuario-->
-                <label for="" class="form-label">Nombre usuario</label>
-                <input type="email" class="form-control" id="" placeholder="Usuario">
+
+        <div class="body">
+            <div class="texto">
+                <h2>Inicio de Sesion</h2>
+                <span>Bienvenido de nuevo</span>
             </div>
-            <!--Constrasena-->
-            <div class="mb-3">
-                <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="contraseña">
-                <div id="passwordHelpBlock" class="form-text">
-                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y numeros, y no debe contener espacios, caracteres especiales o emoji.
+            <form action="" id="form-login" class="rol-form" method="post">
+                <div class="mb-3">
+                    <!--Usuario-->
+                    <label for="usuario" class="form-label">Nombre usuario</label>
+                    <input type="email" class="form-control" id="usuario" placeholder="Usuario">
                 </div>
-            </div>
-            <button type="button" class="btn">Iniciar Sesion</button>
-        </form>
+                <!--Constrasena-->
+                <div class="mb-3">
+                    <label for="inputPassword5" class="form-label">Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
+                        placeholder="contraseña">
+                    <div id="passwordHelpBlock" class="form-text">
+                        Tu contraseña debe tener entre 8-20 caracteres, contener letras y numeros, y no debe contener
+                        espacios, caracteres especiales o emoji.
+                    </div>
+                </div>
+                <button type="button" class="component">
+                    <a href="">Iniciar Sesion</a>
+                </button>
+            </form>
+        </div>
+    </div>
 </main>
 
 {% endblock %}
