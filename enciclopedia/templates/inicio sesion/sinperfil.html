@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Iniciar Sesion {% endblock %}
+
+
+{% block css_extra %}
+<!-- CSS ESPECÍFICO solo para esta página -->
+<link rel="stylesheet" href="{% static 'css/sinperfil.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<main>
+    <div class="fondo">
+        <img class="ellipse" src="/static/imag/guardabarranco.jpg" alt="">
+        <div class="container">
+            <div class="inicio">
+                <div class="info">
+                    <h1>Hola!</h1>
+                    <p>Inicia sesión para seguir aprendiendo</p>
+                </div>
+                <button class="component" type="button" aria-label="Iniciar Sesion">
+                    <a href="{% url 'login' %}" style="text-decoration: none;">Iniciar Sesion</a>
+                </button>
+            </div>
+            <div class="registro">
+                <div class="info">
+                    <h1>¿Aún no eres un colaborador?</h1>
+                    <p>Que esperas! Recuerda que puedes añadir obras accesibles para todos. Crea tu usuario aqui:</p>
+                </div>
+                <button class="component" type="button" aria-label="Registrarse">
+                    <a href="{% url 'registrarse' %}" style="text-decoration: none;">Registrarse</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

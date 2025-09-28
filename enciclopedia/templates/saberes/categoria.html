@@ -1,0 +1,94 @@
+{%extends "base.html"%}
+{% load static %}
+
+{%block titulo%}Categorías - Tayacan{%endblock%}
+
+{%block contenido%}
+<main>
+    <div class="card text-bg-dark">
+        <img src="/static/imag/guardabarranco2.jpg" class="card-img" alt="pajaro"
+            style="object-position: top; opacity: 0.8;">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="search-box">
+        <form class="d-flex" role="search">
+            <label for="">
+                <i class="bi bi-search"></i>
+            </label>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <p class="text-s">¿Qué te interesa aprender hoy?</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/cultura.jpg" class="card-img-top" alt="cultura">
+                    <div class="card-body">
+                        <h5 class="card-title   ">Cultura</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/historia.jpg" class="card-img-top" alt="historia">
+                    <div class="card-body">
+                        <h5 class="card-title">Historia</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/geografia.jpg" class="card-img-top" alt="geografia">
+                    <div class="card-body">
+                        <h5 class="card-title   ">Geografía</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/sociedad.jpg" class="card-img-top" alt="sociedad">
+                    <div class="card-body">
+                        <h5 class="card-title   ">Sociedad</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a
+                            natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/gastronomia.jpg" class="card-img-top" alt="gastronomia">
+                    <div class="card-body">
+                        <h5 class="card-title">Gastronomía</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/imag/artesania.jpg" class="card-img-top" alt="artesania">
+                    <div class="card-body">
+                        <h5 class="card-title">Artesanía</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{%endblock%}

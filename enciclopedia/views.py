@@ -10,19 +10,25 @@ from django.contrib.auth.decorators import login_required
 def tayacan(request):
     return render(request, "paginas/tayacan.html")
 
-def sign_in(request):
-    return render(request, "inicio sesion/perfilnt.html")
+def sin_perfil(request):
+    return render(request, "inicio sesion/sinperfil.html")
 
 def registrarse(request):
     return render(request, "inicio sesion/registrarse.html")
 
-def sesion(request):
-    return render(request, "inicio sesion/login.html")
+def iniciar_sesion(request):
+    return render(request, "inicio sesion/iniciar.html")
 
 def nosotras(request):
     return render(request, "paginas/nosotras.html")
 
 def saberes(request):
     return render(request, "paginas/saberes.html")
+
+def colaborador(request):
+    return render(request, "paginas/colabora.html")
+
+def categoria(request):
+    return render(request, "saberes/categoria.html")
 
 

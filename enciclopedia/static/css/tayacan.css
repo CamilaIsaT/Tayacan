@@ -10,9 +10,9 @@ div .card-title {
     width: 494px;
     height: 163px;
     flex-shrink: 0;
-    font-family: DM Sans;
     font-size: 64px;
     font-style: normal;
+    font-family: var(--font-family-secondary);
     font-weight: 700;
     line-height: 60px;
     /* 93.75% */
@@ -37,7 +37,7 @@ div .card-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-padding: 30px;
+    padding: 30px;
 
 }
 
@@ -47,7 +47,7 @@ padding: 30px;
     flex-shrink: 0;
     color: #5A1C8B;
     text-align: center;
-    font-family: Montserrat;
+    font-family: var(--font-family-secondary);
     font-size: 24px;
     font-style: normal;
     font-weight: 700;

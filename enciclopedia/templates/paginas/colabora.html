@@ -1,7 +1,64 @@
 {% extends "base.html" %}
 
-{% block titulo %}Registrar {% endblock %}
+{% load static %}
+
+{% block titulo %}Colaborar {% endblock %}
+
+{% block css_extra %}
+<!-- CSS ESPECÍFICO solo para esta página -->
+<link rel="stylesheet" href="{% static 'css/colabora.css' %}">
+{% endblock %}
 
 {% block contenido %}
+<main>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id=""
+                placeholder="Escribe el titulo de tu publicación">
+        </div>
+        <div class="mb-3">
+            <label for="inputState" class="form-label">Categoria</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Escoge una opción</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="inputState" class="form-label">Departamento</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Escoge una opción</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Breve descripción</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Es hora de escribir!</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <button type="submit" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip" data-bs-title="Asegúrate de que el material que subes sea tuyo o esté autorizado.">
+            Publicar
+        </button>
+    </form>
+
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    });
+</script>
 
 {% endblock %}

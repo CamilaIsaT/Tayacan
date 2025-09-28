@@ -3,9 +3,13 @@ from . import views
 
 urlpatterns = [
     path('', views.tayacan, name='inicio'),
-    path('colabora', views.sign_in, name='colabora'),
+    path('colabora', views.sin_perfil, name='colabora'),
+     path('login', views.iniciar_sesion, name='login'),
+    path('registrarse', views.registrarse, name='registrarse'),
+     path('publicar', views.colaborador, name='publicar'),
     path('nosotras', views.nosotras, name='nosotras'),
     path('saberes', views.saberes, name='saberes'),
-    path('login', views.sesion, name='login'),
-    path('registrarse', views.registrarse, name='registrarse'),
+    path('categoria', views.categoria, name='categoria'),
+   
+
 ]

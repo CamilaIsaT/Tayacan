@@ -5,13 +5,22 @@
     --color-fourth: #FFB84E;
     --color-background: #FFFFFF;
     --color-text: #666666;
-    --font-family: 'DM Sans', 'Monserrat';
+    --font-family-primary: 'DM Sans', sans-serif;
+    --font-family-secondary: 'Montserrat', sans-serif;
     --font-size-base: 16px;
     --spacing-base: 1rem;
 }
 
+
+
 nav {
     background-color: var(--color-secondary);
+    font-family: var(--font-family-secondary);
+    color: #5A1C8B;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 div.nav a {
@@ -29,13 +38,72 @@ div.nav a:hover {
 }
 
 /* Estilos para el footer */
-.card-img{
+.card-img {
     height: 400px;
     object-fit: cover;
 }
 
-.card-img-overlay{
-    background: rgba(0, 0, 0, 0.4);
+.card-img-overlay {
+    background: linear-gradient(90deg, #5A1C8B 56.23%, rgba(255, 63, 178, 0.80) 100%);
+    opacity: 0.6;
     color: white;
     padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: var(--font-family-secondary);
+}
+
+.social-item {
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    /* 125% */
+    width: 284px;
+    height: 24px;
+    flex-shrink: 0;
+    letter-spacing: var(--Nmero, 0);
+}
+
+.social-item1 {
+    width: 373px;
+    height: 26px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    /* 125% */
+    letter-spacing: var(--Nmero, 0);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.social-item2 {
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    /* 125% */
+    width: 165px;
+    height: 24px;
+    flex-shrink: 0;
+    letter-spacing: var(--Nmero, 0);
 }
