@@ -15,6 +15,21 @@ class rol(models.Model):
 #Se extiende AbstractUser para heredar los campos predeterminados de Django (username, password, email, etc.)
 
 class usuario(AbstractUser):
+
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='usuarios_app_enciclopedia',
+        blank=True,
+        help_text='The groups this user belongs to.',
+        verbose_name='groups',
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='usuarios_app_enciclopedia',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )
     
 #Fecha de nacimiento es opcional (null=True, blank=True) porque solo se registra para estudiantes.
     fecha_nacimiento = models.DateField(null=True, blank=True, verbose_name='Fecha de nacimiento')
