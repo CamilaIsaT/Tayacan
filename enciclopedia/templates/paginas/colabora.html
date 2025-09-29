@@ -1,71 +1,96 @@
 {% extends "base.html" %}
-
 {% load static %}
 
-{% block titulo %}Colaborar {% endblock %}
-
-{% block css_extra %}
-<!-- CSS ESPECÍFICO solo para esta página -->
-<link rel="stylesheet" href="{% static 'css/colabora.css' %}">
-{% endblock %}
+{% block titulo %}Colaborar{% endblock %}
 
 {% block contenido %}
-<main>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <!--Titulo-->
-            <label for="" class="form-label">Titulo</label>
-            <input type="text" class="form-control" id=""
-                placeholder="Escribe el titulo de tu publicación">
+<main class="container my-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h4 class="mb-0">Nueva Publicación</h4>
         </div>
-        <div class="mb-3">
-            <!--Categoria-->
-            <label for="inputState" class="form-label">Categoria</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Escoge una opción</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <!--Departamento-->
-            <label for="inputState" class="form-label">Departamento</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Escoge una opción</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <!--Descripcion-->
-            <label for="exampleFormControlTextarea1" class="form-label">Breve descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-        </div>
-        <div class="mb-3">
-            <!--Contenido-->
-            <label for="exampleFormControlTextarea1" class="form-label">Es hora de escribir!</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-        </div>
-        <div class="mb-3">
-            <!--Subir archivo-->
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile">
-        </div>
-        <!--Botón publicar con tooltip-->
-        <button type="submit" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip" data-bs-title="Asegúrate de que el material que subes sea tuyo o esté autorizado.">
-            Publicar
-        </button>
-    </form>
+        <div class="card-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Título -->
+                <div class="mb-3">
+                    <label for="titulo" class="form-label fw-semibold">Título</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo"
+                        placeholder="Escribe el título de tu publicación" required>
+                </div>
 
+                <!-- Categoría -->
+                <div class="mb-3">
+                    <label for="categoria" class="form-label fw-semibold">Categoría</label>
+                    <select id="categoria" name="categoria" class="form-select" required>
+                        <option value="" selected disabled>Selecciona una categoría</option>
+                        <option value="1">Gastronomía</option>
+                        <option value="2">Flora</option>
+                        <option value="3">Fauna</option>
+                        <option value="4">Tradiciones</option>
+                        <option value="5">Historia</option>
+                    </select>
+                </div>
+
+                <!-- Departamento -->
+                <div class="mb-3">
+                    <label for="departamento" class="form-label fw-semibold">Departamento</label>
+                    <select id="departamento" name="departamento" class="form-select" required>
+                        <option value="" selected disabled>Selecciona un departamento</option>
+                        <option value="managua">Managua</option>
+                        <option value="leon">León</option>
+                        <option value="granada">Granada</option>
+                        <option value="matagalpa">Matagalpa</option>
+                        <option value="carazo">Carazo</option>
+                    </select>
+                </div>
+
+                <!-- Breve descripción -->
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label fw-semibold">Breve descripción</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="2"
+                        placeholder="Escribe un resumen de tu publicación..." required></textarea>
+                </div>
+
+                <!-- Contenido -->
+                <div class="mb-3">
+                    <label for="contenido" class="form-label fw-semibold">Es hora de escribir!</label>
+                    <textarea class="form-control" id="contenido" name="contenido" rows="8"
+                        placeholder="Desarrolla aquí el contenido completo de tu publicación..." required></textarea>
+                </div>
+
+                <!-- Subir archivo -->
+                <div class="mb-3">
+                    <label for="archivo" class="form-label fw-semibold">Adjuntar archivo</label>
+                    <input class="form-control" type="file" id="archivo" name="archivo">
+                    <div class="form-text">Opcional: Puedes subir una imagen o documento relacionado.</div>
+                </div>
+
+                <!-- Botón Publicar -->
+                <div class="d-flex justify-content-center gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-danger btn-lg d-flex align-items-center justify-content-center gap-2"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="Descartar publicación y regresar a la página principal.">
+                        <i class="bi bi-x"></i> Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="Asegúrate de que el material que subes sea tuyo o esté autorizado.">
+                        <i class="bi bi-upload"></i> Publicar
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
 </main>
+
+<!-- Activar tooltips -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        [...tooltipTriggerList].forEach(el => new bootstrap.Tooltip(el));
     });
 </script>
-
 {% endblock %}
