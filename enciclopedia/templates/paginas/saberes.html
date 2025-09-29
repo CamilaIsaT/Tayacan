@@ -1,18 +1,67 @@
-{% extends "base.html" %}  
+{% extends "base.html" %}
 
 {% block titulo %}Inicio - Tayacan{% endblock %}
 
-{% block contenido %} 
-<main>
-    <div class="search-box">
-     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-</div>
-<div class="mapa">
-    <!-- Mapa interactivo de Nicaragua -->
-</div>
+{% block contenido %}
+<main class="container py-4">
+
+    <!-- Barra de búsqueda -->
+    <div class="search-box mb-4">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Mapa -->
+    <div class="mapa mb-5">
+        <!-- Mapa interactivo de Nicaragua -->
+    </div>
+
+    <!-- Categorías -->
+    <section class="categoria">
+        <h2 class="text-center mb-4">Explora por Categorías</h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-0 shadow-sm overflow-hidden rounded-3 h-100">
+                    <img src="/static/imag/gastronomia.jpg" class="card-img" alt="Gastronomía" style="opacity: 0.6;">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" 
+                         style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <h5 class="card-title fw-bold">Gastronomía</h5>
+                        <p class="card-text small">Descubre los sabores y recetas típicas de Nicaragua.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-0 shadow-sm overflow-hidden rounded-3 h-100">
+                    <img src="/static/imag/tradiciones.jpg" class="card-img" alt="Tradiciones" style="opacity: 0.8;">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
+                         style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <h5 class="card-title fw-bold">Tradiciones</h5>
+                        <p class="card-text small">Costumbres, fiestas y celebraciones culturales.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-0 shadow-sm overflow-hidden rounded-3 h-100">
+                    <img src="/static/imag/fauna.jpg" class="card-img" alt="Fauna" style="opacity: 0.7;">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
+                         style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <h5 class="card-title fw-bold">Fauna</h5>
+                        <p class="card-text small">Explora la diversidad de especies que habitan en Nicaragua.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
-{%endblock %}
+{% endblock %}

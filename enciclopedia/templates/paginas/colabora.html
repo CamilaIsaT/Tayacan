@@ -5,25 +5,47 @@
 
 {% block contenido %}
 <main class="container my-5">
-    <div class="card shadow-lg border-0 rounded-3">
+
+    <!-- Opciones de publicación -->
+    <div class="row g-4 justify-content-center mb-5 opciones">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm" role="button" onclick="mostrarFormulario('form-educacion')">
+                <img src="/static/imag/educador.jpg" class="card-img-top" alt="Educación">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Saberes Nicas</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm" role="button" onclick="mostrarFormulario('form-museo')">
+                <img src="/static/imag/estudiante.jpg" class="card-img-top" alt="Museo">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Museo Tayacan</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario Saberes -->
+    <div id="form-educacion" class="card shadow-lg border-0 rounded-3 d-none">
         <div class="card-header bg-primary text-white text-center py-3">
-            <h4 class="mb-0">Nueva Publicación</h4>
+            <h4 class="mb-0">Nueva Publicación - Saberes Nicas</h4>
         </div>
         <div class="card-body">
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                
+
                 <!-- Título -->
                 <div class="mb-3">
-                    <label for="titulo" class="form-label fw-semibold">Título</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo"
+                    <label for="titulo1" class="form-label fw-semibold">Título</label>
+                    <input type="text" class="form-control" id="titulo1" name="titulo"
                         placeholder="Escribe el título de tu publicación" required>
                 </div>
 
                 <!-- Categoría -->
                 <div class="mb-3">
-                    <label for="categoria" class="form-label fw-semibold">Categoría</label>
-                    <select id="categoria" name="categoria" class="form-select" required>
+                    <label for="categoria1" class="form-label fw-semibold">Categoría</label>
+                    <select id="categoria1" name="categoria" class="form-select" required>
                         <option value="" selected disabled>Selecciona una categoría</option>
                         <option value="1">Gastronomía</option>
                         <option value="2">Flora</option>
@@ -35,8 +57,8 @@
 
                 <!-- Departamento -->
                 <div class="mb-3">
-                    <label for="departamento" class="form-label fw-semibold">Departamento</label>
-                    <select id="departamento" name="departamento" class="form-select" required>
+                    <label for="departamento1" class="form-label fw-semibold">Departamento</label>
+                    <select id="departamento1" name="departamento" class="form-select" required>
                         <option value="" selected disabled>Selecciona un departamento</option>
                         <option value="managua">Managua</option>
                         <option value="leon">León</option>
@@ -48,49 +70,139 @@
 
                 <!-- Breve descripción -->
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label fw-semibold">Breve descripción</label>
-                    <textarea class="form-control" id="descripcion" name="descripcion" rows="2"
+                    <label for="descripcion1" class="form-label fw-semibold">Breve descripción</label>
+                    <textarea class="form-control" id="descripcion1" name="descripcion" rows="2"
                         placeholder="Escribe un resumen de tu publicación..." required></textarea>
                 </div>
 
                 <!-- Contenido -->
                 <div class="mb-3">
-                    <label for="contenido" class="form-label fw-semibold">Es hora de escribir!</label>
-                    <textarea class="form-control" id="contenido" name="contenido" rows="8"
+                    <label for="contenido1" class="form-label fw-semibold">Es hora de escribir!</label>
+                    <textarea class="form-control" id="contenido1" name="contenido" rows="8"
                         placeholder="Desarrolla aquí el contenido completo de tu publicación..." required></textarea>
                 </div>
 
                 <!-- Subir archivo -->
                 <div class="mb-3">
-                    <label for="archivo" class="form-label fw-semibold">Adjuntar archivo</label>
-                    <input class="form-control" type="file" id="archivo" name="archivo">
+                    <label for="archivo1" class="form-label fw-semibold">Adjuntar archivo</label>
+                    <input class="form-control" type="file" id="archivo1" name="archivo">
                     <div class="form-text">Opcional: Puedes subir una imagen o documento relacionado.</div>
                 </div>
 
-                <!-- Botón Publicar -->
-                <div class="d-flex justify-content-center gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-danger btn-lg d-flex align-items-center justify-content-center gap-2"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-title="Descartar publicación y regresar a la página principal.">
-                        <i class="bi bi-x"></i> Cancelar
+                <!-- Botones -->
+                <div class="d-flex justify-content-center gap-2 col-8 mx-auto">
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="volver()">
+                        <i class="bi bi-arrow-left"></i> Volver
                     </button>
-                    <button type="submit" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-title="Asegúrate de que el material que subes sea tuyo o esté autorizado.">
+                    <button type="reset" class="btn  btn-lg">
+                       <a href="{% url 'inicio' %}" class="btn btn-danger btn-lg d-flex align-items-center gap-2">
+                            <i class="bi bi-x-circle"></i> Cancelar
+        </a>
+                    </button>>
+                    <button type="submit" class="btn btn-primary btn-lg">
                         <i class="bi bi-upload"></i> Publicar
                     </button>
                 </div>
-                
             </form>
         </div>
     </div>
+
+    <!-- Formulario Museo -->
+    <div id="form-museo" class="card shadow-lg border-0 rounded-3 d-none mt-4">
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h4 class="mb-0">Nueva Publicación - Museo Tayacan</h4>
+        </div>
+        <div class="card-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Título -->
+                <div class="mb-3">
+                    <label for="titulo2" class="form-label fw-semibold">Título</label>
+                    <input type="text" class="form-control" id="titulo2" name="titulo"
+                        placeholder="Escribe el título de tu publicación" required>
+                </div>
+
+                <!-- Categoría -->
+                <div class="mb-3">
+                    <label for="categoria2" class="form-label fw-semibold">Categoría</label>
+                    <select id="categoria2" name="categoria" class="form-select" required>
+                        <option value="" selected disabled>Selecciona una categoría</option>
+                        <option value="1">Gastronomía</option>
+                        <option value="2">Flora</option>
+                        <option value="3">Fauna</option>
+                        <option value="4">Tradiciones</option>
+                        <option value="5">Historia</option>
+                    </select>
+                </div>
+
+                <!-- Departamento -->
+                <div class="mb-3">
+                    <label for="departamento2" class="form-label fw-semibold">Departamento</label>
+                    <select id="departamento2" name="departamento" class="form-select" required>
+                        <option value="" selected disabled>Selecciona un departamento</option>
+                        <option value="managua">Managua</option>
+                        <option value="leon">León</option>
+                        <option value="granada">Granada</option>
+                        <option value="matagalpa">Matagalpa</option>
+                        <option value="carazo">Carazo</option>
+                    </select>
+                </div>
+
+                <!-- Contenido -->
+                <div class="mb-3">
+                    <label for="contenido2" class="form-label fw-semibold">Contenido</label>
+                    <textarea class="form-control" id="contenido2" name="contenido" rows="8"
+                        placeholder="Desarrolla aquí el contenido completo de tu publicación..." required></textarea>
+                </div>
+
+                <!-- Subir archivo -->
+                <div class="mb-3">
+                    <label for="archivo2" class="form-label fw-semibold">Adjuntar archivo</label>
+                    <input class="form-control" type="file" id="archivo2" name="archivo">
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-center gap-2 col-8 mx-auto">
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="volver()">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </button>
+                    <button type="reset" class="btn  btn-lg">
+                       <a href="{% url 'inicio' %}" class="btn btn-danger btn-lg d-flex align-items-center gap-2">
+                            <i class="bi bi-x-circle"></i> Cancelar
+        </a>
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-upload"></i> Publicar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </main>
 
-<!-- Activar tooltips -->
+<!-- Script -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        [...tooltipTriggerList].forEach(el => new bootstrap.Tooltip(el));
-    });
+    function mostrarFormulario(id) {
+        // Ocultar opciones
+        document.querySelector('.opciones').classList.add('d-none');
+
+        // Ocultar ambos formularios primero
+        document.getElementById('form-educacion').classList.add('d-none');
+        document.getElementById('form-museo').classList.add('d-none');
+
+        // Mostrar solo el seleccionado
+        document.getElementById(id).classList.remove('d-none');
+    }
+
+    function volver() {
+        // Mostrar opciones
+        document.querySelector('.opciones').classList.remove('d-none');
+
+        // Ocultar formularios
+        document.getElementById('form-educacion').classList.add('d-none');
+        document.getElementById('form-museo').classList.add('d-none');
+    }
 </script>
 {% endblock %}
