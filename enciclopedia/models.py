@@ -10,6 +10,12 @@ class rol(models.Model):
     def __str__(self):
         return self.nombre_rol
 
+
+class nivel_educacion(models.Model):
+    nombre = models.CharField(max_length=100, unique=True, verbose_name='Nombre del nivel')
+
+    def __str__(self):
+        return self.nombre
 #--------------------------------------------------------------   
 #se define la tabla usuario
 #Se extiende AbstractUser para heredar los campos predeterminados de Django (username, password, email, etc.)
@@ -35,11 +41,11 @@ class usuario(AbstractUser):
     fecha_nacimiento = models.DateField(null=True, blank=True, verbose_name='Fecha de nacimiento')
 #Si un Rol se elimina, el campo 'rol' del Usuario se pone a NULL.
     rol= models.ForeignKey(rol, on_delete=models.SET_NULL, null=True, blank=True)
-    nivel_educacion = models.CharField(max_length=100, null=True, blank=True, verbose_name='Nivel de educación')
+    nivel_educacion = models.ForeignKey(nivel_educacion, on_delete=models.SET_NULL, null=True, blank=True)
 #verifica que el usuario es estudiante
     def es_estudiante(self):
         return self.rol and self.rol.nombre_rol == 'Estudiante'
-#verifica que el usuario es profesor
+
     def __str__(self):
         return self.username
 
