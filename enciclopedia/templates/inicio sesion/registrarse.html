@@ -21,7 +21,7 @@
     <!-- Opciones de rol -->
     <div class="row g-4 justify-content-center mb-5 opciones">
         <div class="col-md-4">
-            <div class="card h-100 shadow-sm" role="button" onclick="mostrarFormulario('form-educacion')">
+            <div class="card h-100 shadow-sm" role="button" onclick="mostrarFormulario('form-educador')">
                 <img src="/static/imag/educador.jpg" class="card-img-top" alt="Educación">
                 <div class="card-body text-center">
                     <h5 class="card-title">Educación</h5>
@@ -39,97 +39,106 @@
     </div>
 
     <!-- Formulario de Educación -->
-    <form action="" id="form-educacion" class="rol-form" method="post" style="display: none;">
+    <form action="" id="form-educador" class="rol-form" method="post" style="display: none;">
+       <input type="hidden" name="form-educador" value="1"> 
         <div class="card shadow-sm p-4 mb-5">
             <h3 class="mb-4">Educador</h3>
+            {% csrf_token %}
             <div class="mb-3">
-                <label for="usuario-educacion" class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" id="usuario-educacion" placeholder="Usuario">
+                <label for="{{ form_educador.username.id_for_label }}" class="form-label">{{ form_educador.username.label }}</label>
+                {{ form_educador.username }}
                 <div class="form-text">Este es el nombre por el que te conocerán los demás.</div>
+                {{ form_educador.username.errors }}
             </div>
             <div class="mb-3">
-                <label for="contra-educacion" class="form-label">Contraseña</label>
-                <input type="password" id="contra-educacion" class="form-control" placeholder="Contraseña">
+                <label for="{{ form_educador.password.id_for_label }}" class="form-label">{{ form_educador.password.label }}</label>
+                {{ form_educador.password }}
                 <div class="form-text">
-                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y números, y no debe incluir espacios, caracteres especiales o emoji.
+                    Tu contraseña debe tener entre 8-20 caracteres...
                 </div>
+                {{ form_educador.password.errors }}
             </div>
             <div class="mb-3">
-                <label for="nivel-educacion" class="form-label">Nivel de educación</label>
-                <select class="form-select" id="nivel-educacion">
-                    <option selected>Escoge una opción</option>
-                    <option value="">...</option>
-                </select>
+                <label for="{{ form_educador.nivel_educacion_id.id_for_label }}" class="form-label">{{ form_educador.nivel_educacion_id.label }}</label>
+                {{ form_educador.nivel_educacion_id }}
+                {{ form_educador.nivel_educacion_id.errors }}
             </div>
-            <div class="d-flex justify-content-between">
-<button type="button" class="btn btn-secondary" onclick="regresarOpciones()">Anterior</button>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary" onclick="regresarOpciones()">Anterior</button>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
         </div>
     </form>
 
     <!-- Formulario de Estudiante -->
     <form action="" id="form-estudiante" class="rol-form" method="post" style="display: none;">
+        <input type="hidden" name="form-estudiante" value="1">
         <div class="card shadow-sm p-4 mb-5">
             <h3 class="mb-4">Estudiante</h3>
-            <div class="mb-3">
-                <label for="usuario-estudiante" class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" id="usuario-estudiante" placeholder="Usuario">
-                <div class="form-text">Este es el nombre por el que te conocerán los demás.</div>
+            {% csrf_token %}
+             <div class="mb-3">
+            <label for="{{ form_estudiante.username.id_for_label }}" class="form-label">{{ form_estudiante.username.label }}</label>
+            {{ form_estudiante.username }}
+            <div class="form-text">Este es el nombre por el que te conocerán los demás.</div>
+            {{ form_estudiante.username.errors }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form_estudiante.password.id_for_label }}" class="form-label">{{ form_estudiante.password.label }}</label>
+            {{ form_estudiante.password }}
+            <div class="form-text">
+                Tu contraseña debe tener entre 8-20 caracteres...
             </div>
-            <div class="mb-3">
-                <label for="contra-estudiante" class="form-label">Contraseña</label>
-                <input type="password" id="contra-estudiante" class="form-control" placeholder="Contraseña">
-                <div class="form-text">
-                    Tu contraseña debe tener entre 8-20 caracteres, contener letras y números, y no debe incluir espacios, caracteres especiales o emoji.
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fecha" name="fecha">
-            </div>
-            <div class="mb-3">
-                <label for="nivel-estudiante" class="form-label">Nivel de educación</label>
-                <select class="form-select" id="nivel-estudiante">
-                    <option selected>Escoge una opción</option>
-                    <option value="">...</option>
-                </select>
-            </div>
+            {{ form_estudiante.password.errors }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form_estudiante.fecha_nacimiento.id_for_label }}" class="form-label">{{ form_estudiante.fecha_nacimiento.label }}</label>
+            {{ form_estudiante.fecha_nacimiento }}
+            {{ form_estudiante.fecha_nacimiento.errors }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form_estudiante.nivel_educacion_id.id_for_label }}" class="form-label">{{ form_estudiante.nivel_educacion_id.label }}</label>
+            {{ form_estudiante.nivel_educacion_id }}
+            {{ form_estudiante.nivel_educacion_id.errors }}
+        </div>
             <div class="d-flex justify-content-between">
-<button type="button" class="btn btn-secondary" onclick="regresarOpciones()">Anterior</button>
+                <button type="button" class="btn btn-secondary" onclick="regresarOpciones()">Anterior</button>
                 <button type="submit" class="btn btn-primary">Registrarse</button>
             </div>
         </div>
     </form>
 
 </main>
- <script>
-function mostrarFormulario(formId) {
-    // Oculta las opciones de rol
-    document.querySelector('.opciones').style.display = 'none';
+<script>
+    function mostrarFormulario(formId) {
+        // Oculta las opciones de rol
+        document.querySelector('.opciones').style.display = 'none';
 
-    // Oculta todos los formularios
-    document.querySelectorAll('.rol-form').forEach(form => form.style.display = 'none');
+        // Oculta todos los formularios
+        document.querySelectorAll('.rol-form').forEach(form => form.style.display = 'none');
 
-    // Muestra el formulario seleccionado
-    const form = document.getElementById(formId);
-    if (form) {
-        form.style.display = 'block';
-        form.scrollIntoView({ behavior: 'smooth' });
+        // Muestra el formulario seleccionado
+        const form = document.getElementById(formId);
+        if (form) {
+            form.style.display = 'block';
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
     }
-}
 
-function regresarOpciones() {
-    // Oculta todos los formularios
-    document.querySelectorAll('.rol-form').forEach(form => form.style.display = 'none');
+    function regresarOpciones() {
+        // Oculta todos los formularios
+        document.querySelectorAll('.rol-form').forEach(form => form.style.display = 'none');
 
-    // Muestra de nuevo las opciones de rol
-    const opciones = document.querySelector('.opciones');
-    if (opciones) {
-        opciones.style.display = 'flex';
-        opciones.scrollIntoView({ behavior: 'smooth' });
+        // Muestra de nuevo las opciones de rol
+        const opciones = document.querySelector('.opciones');
+        if (opciones) {
+            opciones.style.display = 'flex';
+            opciones.scrollIntoView({ behavior: 'smooth' });
+        }
     }
-}
 </script>
 
 {% endblock %}
